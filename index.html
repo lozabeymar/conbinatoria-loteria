@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora PowerBall - Combinatoria</title>
+    <link rel="stylesheet" href="../conbinatoria/css/estilos.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Apliquemos la Matemática a la Lotería</h1>
+        
+        <section class="explicacion">
+            <h2>¿Cómo se calcula la probabilidad en PowerBall?</h2>
+            <p>
+                Para ganar el premio mayor, necesitas acertar dos eventos independientes al mismo tiempo. 
+                Usamos la fórmula de las <strong>Combinaciones sin repetición</strong>:
+            </p>
+            <div class="formula">
+                $$C(n, r) = \frac{n!}{r! \cdot (n - r)!}$$
+            </div>
+            <p>
+                Donde <strong>n</strong> es el total de números disponibles y <strong>r</strong> es cuántos debes elegir. 
+                Al final, multiplicamos las posibilidades de las bolas blancas por las de la bola especial (PowerBall) para obtener las combinaciones totales.
+            </p>
+        </section>
+
+        <main class="caja-principal">
+            <form id="form-loteria">
+                <!-- Bloque 1: Bolas Regulares -->
+                <div class="seccion-formulario">
+                    <h2>1. Rango de las Bolas Regulares</h2>
+                    <p class="subtexto">Por ejemplo, en el PowerBall real eliges 5 números de un total de 69.</p>
+                    <div class="grupo-input">
+                        <label for="n">Total de números (n):</label>
+                        <input type="number" id="n" min="1" placeholder="Ej. 69" required>
+                    </div>
+                    <div class="grupo-input">
+                        <label for="r">Números a elegir (r):</label>
+                        <input type="number" id="r" min="1" placeholder="Ej. 5" required>
+                    </div>
+                </div>
+
+                <!-- Bloque 2: PowerBall -->
+                <div class="seccion-formulario">
+                    <h2>2. Rango de la Bola Especial (PowerBall)</h2>
+                    <p class="subtexto">Por ejemplo, eliges 1 bola especial de un total de 26.</p>
+                    <div class="grupo-input">
+                        <label for="m">Total de PowerBalls (n):</label>
+                        <input type="number" id="m" min="1" placeholder="Ej. 26" required>
+                    </div>
+                    <div class="grupo-input">
+                        <label for="s">PowerBalls a elegir (r):</label>
+                        <input type="number" id="s" min="1" placeholder="Ej. 1" required>
+                    </div>
+                </div>
+
+                <button type="submit" id="btn-calcular">Calcular Posibilidades</button>
+            </form>
+        </main>
+
+        <!-- Contenedor para mostrar resultados en pantalla -->
+        <section id="contenedor-resultado" class="resultado-oculto">
+            <h3>¡Resultado del Cálculo!</h3>
+            <p id="texto-resultado"></p>
+        </section>
+    </div>
+
+    <!-- Carga de MathJax para renderizar la fórmula matemática de forma elegante -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../conbinatoria/js/script.js"></script>
+</body>
+</html>
